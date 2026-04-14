@@ -8,747 +8,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
         rel="stylesheet">
-    <style>
-        :root {
-            --ink: #0d0f14;
-            --bg: #f5f2eb;
-            --cream: #ede9df;
-            --accent: #c84b2f;
-            --accent2: #2d6a4f;
-            --gold: #d4a017;
-            --muted: #6b6558;
-            --white: #fdfcf9;
-        }
-
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--bg);
-            color: var(--ink);
-            overflow-x: hidden;
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1.2rem 4rem;
-            background: rgba(245, 242, 235, 0.88);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-        }
-
-        .nav-logo {
-            font-family: 'Syne', sans-serif;
-            font-weight: 800;
-            font-size: 1.1rem;
-            letter-spacing: -0.03em;
-            color: var(--ink);
-            text-decoration: none;
-        }
-
-        .nav-logo span {
-            color: var(--accent);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 0.04em;
-            color: var(--muted);
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        .hero {
-            min-height: 100vh;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            padding-top: 5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-left {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 6rem 3rem 6rem 4rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 2rem;
-        }
-
-        .hero-tag::before {
-            content: '';
-            width: 2rem;
-            height: 2px;
-            background: var(--accent);
-        }
-
-        .hero h1 {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(3rem, 5vw, 5.5rem);
-            font-weight: 800;
-            line-height: 0.95;
-            letter-spacing: -0.04em;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h1 em {
-            font-style: normal;
-            color: var(--accent);
-            display: block;
-        }
-
-        .hero-subtitle {
-            font-size: 1.1rem;
-            color: var(--muted);
-            line-height: 1.7;
-            max-width: 440px;
-            margin-bottom: 3rem;
-        }
-
-        .hero-btns {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: var(--white);
-            padding: 1rem 2.2rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 0.02em;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
-            transition: background 0.25s, transform 0.2s;
-        }
-
-        .btn-primary:hover {
-            background: #a83820;
-            transform: translateY(-2px);
-        }
-
-        .btn-ghost {
-            background: transparent;
-            color: var(--ink);
-            padding: 1rem 2.2rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1.5px solid var(--ink);
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.25s;
-        }
-
-        .btn-ghost:hover {
-            background: var(--ink);
-            color: var(--white);
-        }
-
-        .hero-right {
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, #1a3c2c 0%, #0d2818 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-imagen {
-            text-align: center;
-            padding: 2rem;
-            max-width: 90%;
-            animation: fadeInScale 0.8s ease-out;
-        }
-
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .hero-imagen svg {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            margin-bottom: 2rem;
-        }
-
-        .frase-trabajo-social {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.6;
-            max-width: 380px;
-            margin: 0 auto;
-            font-style: italic;
-            border-left: 3px solid var(--accent);
-            padding-left: 1.2rem;
-            text-align: left;
-        }
-
-        .frase-trabajo-social strong {
-            color: var(--accent);
-            font-weight: 600;
-        }
-
-        .frase-autor {
-            margin-top: 0.8rem;
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.5);
-            font-style: normal;
-        }
-
-        .hero-noise {
-            position: absolute;
-            inset: 0;
-            opacity: 0.04;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-            pointer-events: none;
-        }
-
-        .stats-bar {
-            background: var(--accent2);
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            padding: 2rem 4rem;
-            gap: 2rem;
-        }
-
-        .stat {
-            text-align: center;
-            color: var(--white);
-        }
-
-        .stat-num {
-            font-family: 'Syne', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 800;
-            display: block;
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            opacity: 0.75;
-            margin-top: 0.3rem;
-            letter-spacing: 0.05em;
-        }
-
-        section {
-            padding: 6rem 4rem;
-        }
-
-        .section-label {
-            font-size: 0.72rem;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .section-title {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(2rem, 3.5vw, 3rem);
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-            margin-bottom: 1.5rem;
-        }
-
-        .section-body {
-            font-size: 1.05rem;
-            color: var(--muted);
-            line-height: 1.75;
-            max-width: 560px;
-        }
-
-        .how-section {
-            background: var(--white);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: center;
-        }
-
-        .steps {
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-            margin-top: 2rem;
-        }
-
-        .step {
-            display: flex;
-            gap: 1.5rem;
-            align-items: flex-start;
-        }
-
-        .step-num {
-            font-family: 'Syne', sans-serif;
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--cream);
-            line-height: 1;
-            min-width: 3rem;
-            margin-top: -0.3rem;
-        }
-
-        .step-content h4 {
-            font-family: 'Syne', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 0.4rem;
-        }
-
-        .step-content p {
-            font-size: 0.9rem;
-            color: var(--muted);
-            line-height: 1.6;
-        }
-
-        .mockup {
-            background: var(--ink);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
-            position: relative;
-        }
-
-        .mockup-bar {
-            background: #1a1d24;
-            padding: 0.8rem 1rem;
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-
-        .d1 {
-            background: #ff5f57;
-        }
-
-        .d2 {
-            background: #febc2e;
-        }
-
-        .d3 {
-            background: #28c840;
-        }
-
-        .mockup-title {
-            color: rgba(255, 255, 255, 0.3);
-            font-size: 0.7rem;
-            margin-left: 0.5rem;
-            letter-spacing: 0.06em;
-        }
-
-        .mockup-body {
-            padding: 1.5rem;
-        }
-
-        .case-header {
-            font-family: 'Syne', sans-serif;
-            color: var(--white);
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .case-text {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.82rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .choice-label {
-            color: rgba(255, 255, 255, 0.35);
-            font-size: 0.65rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 0.7rem;
-        }
-
-        .choices {
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-        }
-
-        .choice {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.78rem;
-            padding: 0.7rem 1rem;
-            border-radius: 3px;
-            cursor: pointer;
-            transition: all 0.2s;
-            text-align: left;
-        }
-
-        .choice:hover,
-        .choice.selected {
-            background: rgba(200, 75, 47, 0.25);
-            border-color: var(--accent);
-            color: var(--white);
-        }
-
-        .feedback-box {
-            margin-top: 1rem;
-            padding: 0.8rem 1rem;
-            background: rgba(45, 106, 79, 0.25);
-            border-left: 3px solid var(--accent2);
-            border-radius: 2px;
-        }
-
-        .feedback-box p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.75rem;
-            line-height: 1.6;
-        }
-
-        .cases-section {
-            background: var(--bg);
-        }
-
-        .cases-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .case-card {
-            background: var(--white);
-            border: 1px solid rgba(0, 0, 0, 0.06);
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            text-decoration: none;
-            display: block;
-            color: inherit;
-        }
-
-        .case-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: var(--accent);
-            transition: width 0.4s;
-        }
-
-        .case-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        .case-card:hover::after {
-            width: 100%;
-        }
-
-        .case-card .c-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.2rem;
-            display: block;
-        }
-
-        .case-card h3 {
-            font-family: 'Syne', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 0.6rem;
-        }
-
-        .case-card p {
-            font-size: 0.85rem;
-            color: var(--muted);
-            line-height: 1.6;
-        }
-
-        .case-card .difficulty {
-            margin-top: 1rem;
-            font-size: 0.68rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .dots {
-            display: flex;
-            gap: 3px;
-        }
-
-        .d-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--accent);
-        }
-
-        .d-dot.empty {
-            background: rgba(0, 0, 0, 0.12);
-        }
-
-        .fundamento-section {
-            background: var(--cream);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: start;
-        }
-
-        .ref-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .ref-card {
-            background: var(--white);
-            padding: 1.5rem 1.8rem;
-            border-left: 4px solid var(--accent2);
-            display: flex;
-            gap: 1.2rem;
-            align-items: flex-start;
-        }
-
-        .ref-year {
-            font-family: 'Syne', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--cream);
-            line-height: 1;
-            min-width: 4rem;
-        }
-
-        .ref-content h4 {
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-        }
-
-        .ref-content p {
-            font-size: 0.8rem;
-            color: var(--muted);
-            line-height: 1.5;
-        }
-
-        .value-list {
-            margin-top: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .value-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .v-icon {
-            font-size: 1.3rem;
-            margin-top: 2px;
-        }
-
-        .v-text h4 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .v-text p {
-            font-size: 0.82rem;
-            color: var(--muted);
-            line-height: 1.5;
-        }
-
-        .cta-section {
-            background: var(--accent);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 7rem 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '360°';
-            font-family: 'Syne', sans-serif;
-            font-size: 20vw;
-            font-weight: 800;
-            color: rgba(255, 255, 255, 0.07);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            white-space: nowrap;
-            pointer-events: none;
-        }
-
-        .cta-section h2 {
-            font-family: 'Syne', sans-serif;
-            color: var(--white);
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            margin-bottom: 1rem;
-            position: relative;
-        }
-
-        .cta-section p {
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 1.05rem;
-            margin-bottom: 2.5rem;
-            position: relative;
-        }
-
-        .btn-white {
-            background: var(--white);
-            color: var(--accent);
-            padding: 1.1rem 3rem;
-            font-size: 0.95rem;
-            font-weight: 700;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            letter-spacing: 0.02em;
-            transition: all 0.25s;
-            position: relative;
-            clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
-        }
-
-        .btn-white:hover {
-            background: var(--ink);
-            color: var(--white);
-        }
-
-        [data-reveal] {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-
-        [data-reveal].visible {
-            opacity: 1;
-            transform: none;
-        }
-
-        @media (max-width: 900px) {
-            nav {
-                padding: 1rem 2rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-right {
-                min-height: 60vh;
-            }
-
-            .hero-left {
-                padding: 3rem 2rem;
-            }
-
-            section {
-                padding: 4rem 2rem;
-            }
-
-            .how-section,
-            .fundamento-section {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .stats-bar {
-                padding: 2rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -758,6 +18,7 @@
         <ul class="nav-links">
             <li><a href="#como-funciona">Cómo funciona</a></li>
             <li><a href="#casos">Casos</a></li>
+            <li><a href="#planes">Planes</a></li>
             <li><a href="#fundamento">Fundamento</a></li>
         </ul>
     </nav>
@@ -911,7 +172,7 @@
                 aprendizaje experiencial.</p>
         </div>
         <div class="cases-grid">
-            <a href="./html/violenciaintrafamiliar.html" class="case-card" data-reveal>
+            <a href="html/caso-violencia-intrafamiliar.html" class="case-card" data-reveal>
                 <span class="c-icon">🏠</span>
                 <h3>Violencia Intrafamiliar</h3>
                 <p>Protocolos de primera respuesta, evaluación de riesgo y activación de rutas de atención.</p>
@@ -922,7 +183,7 @@
                     </div>
                 </div>
             </a>
-            <a href="caso-consumo-spa.html" class="case-card" data-reveal>
+            <a href="html/caso-consumo-spa.html" class="case-card" data-reveal>
                 <span class="c-icon">🧬</span>
                 <h3>Consumo de SPA</h3>
                 <p>Entrevista motivacional, evaluación de consumo y diseño de plan de intervención.</p>
@@ -933,7 +194,7 @@
                     </div>
                 </div>
             </a>
-            <a href="caso-entrevista-victimas.html" class="case-card" data-reveal>
+            <a href="html/caso-entrevista-victimas.html" class="case-card" data-reveal>
                 <span class="c-icon">🎙️</span>
                 <h3>Entrevista a Víctimas</h3>
                 <p>Técnicas de escucha activa, empatía comprobada y principios de no revictimización.</p>
@@ -944,7 +205,7 @@
                     </div>
                 </div>
             </a>
-            <a href="caso-conflictos-escolares.html" class="case-card" data-reveal>
+            <a href="html/caso-conflictos-escolares.html" class="case-card" data-reveal>
                 <span class="c-icon">🎓</span>
                 <h3>Conflictos Escolares</h3>
                 <p>Mediación entre pares, trabajo con familias y articulación con instituciones educativas.</p>
@@ -955,7 +216,7 @@
                     </div>
                 </div>
             </a>
-            <a href="caso-visita-domiciliaria.html" class="case-card" data-reveal>
+            <a href="html/caso-visita-domiciliaria.html" class="case-card" data-reveal>
                 <span class="c-icon">🚪</span>
                 <h3>Visita Domiciliaria</h3>
                 <p>Diagnóstico familiar, mapeo de redes de apoyo y elaboración de informes técnicos.</p>
@@ -966,6 +227,80 @@
                     </div>
                 </div>
             </a>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE PLANES DE ACCESO -->
+    <section class="pricing-section" id="planes">
+        <div class="pricing-header" data-reveal>
+            <span class="section-label">PLANES DE ACCESO</span>
+            <h2 class="section-title">Elige tu modalidad</h2>
+            <p class="section-body">Desde el estudiante individual hasta la universidad que necesita licencias para toda
+                la cohorte.</p>
+        </div>
+        <div class="plans-grid">
+            <div class="plan" data-reveal>
+                <div class="plan-header">
+                    <div class="plan-name">INDIVIDUAL</div>
+                    <div class="plan-price">
+                        <span class="currency">$</span>
+                        <span class="amount">25</span>
+                        <span class="period">/mes</span>
+                    </div>
+                    <p class="plan-desc">Para estudiantes que quieren practicar a su propio ritmo.</p>
+                </div>
+                <ul class="plan-features">
+                    <li>✅ Acceso a todos los casos</li>
+                    <li>✅ Retroalimentación automática</li>
+                    <li>✅ Progreso guardado</li>
+                    <li>✅ Certificado digital</li>
+                </ul>
+                <button class="btn-plan"
+                    onclick="alert('Gracias por tu interés. Próximamente disponible.')">SUSCRIBIRSE</button>
+            </div>
+
+            <div class="plan featured" data-reveal>
+                <div class="plan-badge">🔥 MÁS POPULAR</div>
+                <div class="plan-header">
+                    <div class="plan-name">UNIVERSIDAD</div>
+                    <div class="plan-price">
+                        <span class="currency">$</span>
+                        <span class="amount">8</span>
+                        <span class="period">/usuario</span>
+                    </div>
+                    <p class="plan-desc">Licencias para cohortes de práctica profesional. Mínimo 20 accesos.</p>
+                </div>
+                <ul class="plan-features">
+                    <li>✅ Todo lo del plan Individual</li>
+                    <li>✅ Dashboard docente</li>
+                    <li>✅ Casos personalizables</li>
+                    <li>✅ Reportes de desempeño</li>
+                    <li>✅ Soporte técnico dedicado</li>
+                </ul>
+                <button class="btn-plan"
+                    onclick="alert('Solicita información para tu universidad. Escríbenos a ventas@simuintervencion.com')">SOLICITAR
+                    LICENCIAS</button>
+            </div>
+
+            <div class="plan" data-reveal>
+                <div class="plan-header">
+                    <div class="plan-name">PREMIUM + ASESORÍA</div>
+                    <div class="plan-price">
+                        <span class="currency">$</span>
+                        <span class="amount">80</span>
+                        <span class="period">/taller</span>
+                    </div>
+                    <p class="plan-desc">Talleres grupales con asesoría en vivo de un profesional experto.</p>
+                </div>
+                <ul class="plan-features">
+                    <li>✅ Acceso al simulador incluido</li>
+                    <li>✅ Sesión grupal en vivo</li>
+                    <li>✅ Retroalimentación experta</li>
+                    <li>✅ Certificado con firma</li>
+                </ul>
+                <button class="btn-plan" onclick="alert('Agenda tu taller grupal. Cupos limitados.')">AGENDAR
+                    TALLER</button>
+            </div>
         </div>
     </section>
 
@@ -1040,47 +375,21 @@
         </div>
     </section>
 
+    <!-- SECCIÓN NARANJA (CTA) -->
     <section class="cta-section">
         <h2>Empieza a practicar hoy.</h2>
         <p>No esperes al campo para aprender. Practica en un entorno seguro y llega mejor preparado.</p>
         <a class="btn-white" href="#casos">Explorar casos →</a>
     </section>
 
-    <script>
-        const reveals = document.querySelectorAll('[data-reveal]');
-        const io = new IntersectionObserver((entries) => {
-            entries.forEach((e, i) => {
-                if (e.isIntersecting) {
-                    setTimeout(() => e.target.classList.add('visible'), i * 80);
-                    io.unobserve(e.target);
-                }
-            });
-        }, { threshold: 0.12 });
-        reveals.forEach(el => io.observe(el));
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">SimuIntervención <span>360°</span></div>
+        <p>Laboratorio Virtual de Simulación para Trabajo Social</p>
+        <p style="color:rgba(255,255,255,0.2)">© 2024 — Todos los derechos reservados</p>
+    </footer>
 
-        function selectChoice(btn, correct) {
-            document.querySelectorAll('.choice').forEach(b => {
-                b.classList.remove('selected');
-                b.disabled = true;
-            });
-            btn.classList.add('selected');
-            const fb = document.getElementById('feedback');
-            if (correct) {
-                fb.style.display = 'block';
-                fb.innerHTML = '<p>✅ <strong>Buena elección.</strong> Crear un espacio privado con la usuaria permite una comunicación más honesta y reduce el riesgo de represalia. Esto se alinea con el principio de no revictimización.</p>';
-                fb.style.background = 'rgba(45,106,79,0.25)';
-                fb.style.borderColor = 'var(--accent2)';
-            } else {
-                fb.innerHTML = '<p>⚠️ <strong>Reflexiona.</strong> Esta acción podría comprometer la seguridad de la usuaria o generar una segunda victimización. Intenta de nuevo con una nueva sesión.</p>';
-                fb.style.background = 'rgba(200,75,47,0.2)';
-                fb.style.borderColor = 'var(--accent)';
-                fb.style.display = 'block';
-            }
-            setTimeout(() => {
-                document.querySelectorAll('.choice').forEach(b => b.disabled = false);
-            }, 2500);
-        }
-    </script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
