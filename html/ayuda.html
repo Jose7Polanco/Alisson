@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayuda - SimuIntervención 360°</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: linear-gradient(135deg, #f5f2eb 0%, #ede9df 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .ayuda-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            padding: 2.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .ayuda-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #ede9df;
+        }
+
+        .ayuda-header h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            color: #c84b2f;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .ayuda-header p {
+            color: #6b6558;
+            font-size: 0.9rem;
+        }
+
+        .help-section {
+            background: #fafaf8;
+            border-radius: 20px;
+            padding: 1.2rem;
+            margin-bottom: 1.2rem;
+            border-left: 4px solid #c84b2f;
+            transition: transform 0.2s;
+        }
+
+        .help-section:hover {
+            transform: translateX(5px);
+        }
+
+        .help-section h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1rem;
+            color: #0d0f14;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .help-section p {
+            font-size: 0.9rem;
+            color: #6b6558;
+            line-height: 1.6;
+        }
+
+        .help-tip {
+            background: linear-gradient(135deg, #2d6a4f15 0%, #2d6a4f08 100%);
+            border-radius: 16px;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            text-align: center;
+            border-left: 4px solid #2d6a4f;
+        }
+
+        .help-tip strong {
+            color: #2d6a4f;
+        }
+
+        .btn-volver {
+            background: #2d6a4f;
+            color: white;
+            padding: 0.9rem 2rem;
+            border: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 40px;
+            transition: all 0.2s;
+            margin-top: 1.5rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-volver:hover {
+            transform: translateY(-2px);
+            background: #1f4f3a;
+        }
+
+        .botones {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .ayuda-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ayuda-container">
+        <div class="ayuda-header">
+            <h1>
+                <span>❓</span> ¿Cómo usar SimuIntervención 360°?
+            </h1>
+            <p>Guía rápida para aprovechar al máximo el simulador</p>
+        </div>
+
+        <div class="help-section">
+            <h3>🎯 1. Explora los casos disponibles</h3>
+            <p>En la sección <strong>"Casos disponibles"</strong> de la página principal encontrarás diferentes
+                situaciones reales de intervención social. Cada caso tiene un nivel de dificultad: <strong>Básico,
+                    Intermedio o Avanzado</strong>. Elige el que más te interese.</p>
+        </div>
+
+        <div class="help-section">
+            <h3>🖱️ 2. Selecciona un caso</h3>
+            <p>Haz clic en cualquier tarjeta de caso para abrirlo. Cada caso contiene <strong>4 preguntas</strong>
+                basadas en una situación real de trabajo social. Las preguntas evalúan tus conocimientos y capacidad de
+                toma de decisiones.</p>
+        </div>
+
+        <div class="help-section">
+            <h3>💡 3. Responde las preguntas</h3>
+            <p>Lee atentamente cada pregunta y elige la opción que consideres más adecuada. Al seleccionar una
+                respuesta, recibirás <strong>retroalimentación inmediata</strong> explicando por qué es correcta o
+                incorrecta, con fundamentos profesionales.</p>
+        </div>
+
+        <div class="help-section">
+            <h3>📊 4. Revisa tu progreso</h3>
+            <p>Una <strong>barra de progreso</strong> te mostrará cuántas preguntas has respondido. Al finalizar el
+                caso, obtendrás una <strong>revisión completa</strong> con tus aciertos, errores y explicaciones
+                detalladas de cada pregunta.</p>
+        </div>
+
+        <div class="help-section">
+            <h3>🔄 5. Reinicia o vuelve atrás</h3>
+            <p>Puedes <strong>reiniciar cualquier caso</strong> con el botón "Reiniciar" para volver a practicar todas
+                las veces que quieras. También puedes volver a la página principal con el botón
+                <strong>"Volver"</strong> para explorar otros casos.
+            </p>
+        </div>
+
+        <div class="help-section">
+            <h3>💰 6. Planes de acceso</h3>
+            <p>Si deseas acceder a funciones adicionales como <strong>certificados digitales, dashboard docente, casos
+                    personalizables o talleres en vivo</strong>, revisa la sección <strong>"Planes de acceso"</strong> y
+                elige el que mejor se adapte a tus necesidades.</p>
+        </div>
+
+        <div class="help-tip">
+            <strong>✨ Tip importante:</strong> No tengas miedo de equivocarte. El simulador está diseñado para que
+            aprendas de tus errores en un entorno seguro, sin consecuencias reales para las personas atendidas. ¡Cada
+            error es una oportunidad de aprendizaje!
+        </div>
+
+        <div class="botones">
+            <a href="../index.html" class="btn-volver">← Volver a la página principal</a>
+        </div>
+    </div>
+</body>
+
+</html>

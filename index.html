@@ -8,7 +8,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
@@ -18,8 +18,10 @@
         <ul class="nav-links">
             <li><a href="#como-funciona">Cómo funciona</a></li>
             <li><a href="#casos">Casos</a></li>
+            <li><a href="#experiencias">Experiencias</a></li>
             <li><a href="#planes">Planes</a></li>
             <li><a href="#fundamento">Fundamento</a></li>
+            <li><a href="html/ayuda.html" class="nav-help">❓ Ayuda</a></li>
         </ul>
     </nav>
 
@@ -172,7 +174,7 @@
                 aprendizaje experiencial.</p>
         </div>
         <div class="cases-grid">
-            <a href="html/caso-violencia-intrafamiliar.html" class="case-card" data-reveal>
+            <a href="./html/violenciaintrafamiliar.html" class="case-card" data-reveal>
                 <span class="c-icon">🏠</span>
                 <h3>Violencia Intrafamiliar</h3>
                 <p>Protocolos de primera respuesta, evaluación de riesgo y activación de rutas de atención.</p>
@@ -183,7 +185,7 @@
                     </div>
                 </div>
             </a>
-            <a href="html/caso-consumo-spa.html" class="case-card" data-reveal>
+            <a href="./html/consumodespa.html" class="case-card" data-reveal>
                 <span class="c-icon">🧬</span>
                 <h3>Consumo de SPA</h3>
                 <p>Entrevista motivacional, evaluación de consumo y diseño de plan de intervención.</p>
@@ -194,7 +196,7 @@
                     </div>
                 </div>
             </a>
-            <a href="html/caso-entrevista-victimas.html" class="case-card" data-reveal>
+            <a href="./html/entrevistaavictima.html" class="case-card" data-reveal>
                 <span class="c-icon">🎙️</span>
                 <h3>Entrevista a Víctimas</h3>
                 <p>Técnicas de escucha activa, empatía comprobada y principios de no revictimización.</p>
@@ -205,7 +207,7 @@
                     </div>
                 </div>
             </a>
-            <a href="html/caso-conflictos-escolares.html" class="case-card" data-reveal>
+            <a href="./html/conflictosescolares.html" class="case-card" data-reveal>
                 <span class="c-icon">🎓</span>
                 <h3>Conflictos Escolares</h3>
                 <p>Mediación entre pares, trabajo con familias y articulación con instituciones educativas.</p>
@@ -216,7 +218,7 @@
                     </div>
                 </div>
             </a>
-            <a href="html/caso-visita-domiciliaria.html" class="case-card" data-reveal>
+            <a href="./html/visitadomiciliaria.html" class="case-card" data-reveal>
                 <span class="c-icon">🚪</span>
                 <h3>Visita Domiciliaria</h3>
                 <p>Diagnóstico familiar, mapeo de redes de apoyo y elaboración de informes técnicos.</p>
@@ -230,7 +232,56 @@
         </div>
     </section>
 
-    <!-- SECCIÓN DE PLANES DE ACCESO -->
+    <section class="experiencias-section" id="experiencias">
+        <div class="experiencias-bg-decoration"></div>
+        <div data-reveal>
+            <span class="section-label">💬 COMUNIDAD</span>
+            <h2 class="section-title">Comparte tu <span style="color: #c84b2f;">experiencia</span></h2>
+            <p class="section-body">Tus vivencias en el campo del trabajo social pueden inspirar y ayudar a otros
+                profesionales. Cuéntanos tu historia.</p>
+        </div>
+
+        <div class="experiencia-form" data-reveal id="formularioExperiencia">
+            <div class="form-decoration">
+                <div class="form-decoration-icon">📝</div>
+            </div>
+            <h3>Cuéntanos tu experiencia</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>👤 Tu nombre</label>
+                    <input type="text" id="nombreUsuario" placeholder="Ej: Alisson Florez (opcional)"
+                        class="form-input">
+                </div>
+                <div class="form-group">
+                    <label>🏷️ Categoría</label>
+                    <select id="categoriaExperiencia" class="form-input">
+                        <option value="">Selecciona una categoría</option>
+                        <option value="Violencia Intrafamiliar">🏠 Violencia Intrafamiliar</option>
+                        <option value="Consumo de SPA">🧬 Consumo de SPA</option>
+                        <option value="Entrevista a Víctimas">🎙️ Entrevista a Víctimas</option>
+                        <option value="Conflictos Escolares">🎓 Conflictos Escolares</option>
+                        <option value="Visita Domiciliaria">🚪 Visita Domiciliaria</option>
+                        <option value="General">💬 General</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group full-width">
+                <label>✍️ Tu experiencia</label>
+                <textarea id="contenidoExperiencia" rows="4"
+                    placeholder="Comparte tu vivencia, reflexión, consejo o aprendizaje... Tu historia puede inspirar a otros trabajadores sociales."
+                    class="form-textarea"></textarea>
+            </div>
+            <div class="form-actions">
+                <button class="btn-enviar" onclick="agregarExperiencia()">
+                    <span>📢</span> Compartir experiencia
+                </button>
+                <button class="btn-ver-experiencias" onclick="window.location.href='html/experiencias.html'">
+                    <span>📖</span> Ver experiencias compartidas
+                </button>
+            </div>
+        </div>
+    </section>
+
     <section class="pricing-section" id="planes">
         <div class="pricing-header" data-reveal>
             <span class="section-label">PLANES DE ACCESO</span>
@@ -244,7 +295,7 @@
                     <div class="plan-name">INDIVIDUAL</div>
                     <div class="plan-price">
                         <span class="currency">$</span>
-                        <span class="amount">25</span>
+                        <span class="amount">25mil</span>
                         <span class="period">/mes</span>
                     </div>
                     <p class="plan-desc">Para estudiantes que quieren practicar a su propio ritmo.</p>
@@ -265,7 +316,7 @@
                     <div class="plan-name">UNIVERSIDAD</div>
                     <div class="plan-price">
                         <span class="currency">$</span>
-                        <span class="amount">8</span>
+                        <span class="amount">8mil</span>
                         <span class="period">/usuario</span>
                     </div>
                     <p class="plan-desc">Licencias para cohortes de práctica profesional. Mínimo 20 accesos.</p>
@@ -287,7 +338,7 @@
                     <div class="plan-name">PREMIUM + ASESORÍA</div>
                     <div class="plan-price">
                         <span class="currency">$</span>
-                        <span class="amount">80</span>
+                        <span class="amount">80mil</span>
                         <span class="period">/taller</span>
                     </div>
                     <p class="plan-desc">Talleres grupales con asesoría en vivo de un profesional experto.</p>
@@ -375,21 +426,19 @@
         </div>
     </section>
 
-    <!-- SECCIÓN NARANJA (CTA) -->
     <section class="cta-section">
         <h2>Empieza a practicar hoy.</h2>
         <p>No esperes al campo para aprender. Practica en un entorno seguro y llega mejor preparado.</p>
         <a class="btn-white" href="#casos">Explorar casos →</a>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="footer-logo">SimuIntervención <span>360°</span></div>
         <p>Laboratorio Virtual de Simulación para Trabajo Social</p>
-        <p style="color:rgba(255,255,255,0.2)">© 2024 — Todos los derechos reservados</p>
+        <p style="color:rgba(255,255,255,0.2)">© 2026 — Todos los derechos reservados</p>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
