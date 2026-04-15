@@ -9,242 +9,100 @@
         href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
-    <style>
-        body {
-            padding: 2rem;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 16px;
-            padding: 2.5rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        h1 {
-            font-family: 'Syne', sans-serif;
-            font-size: 1.8rem;
-            color: #c84b2f;
-            margin-bottom: 0.5rem;
-        }
-
-        .badge {
-            display: inline-block;
-            background: #d4a017;
-            color: white;
-            font-size: 0.7rem;
-            padding: 0.2rem 0.8rem;
-            border-radius: 20px;
-            margin-bottom: 1rem;
-        }
-
-        .imagen-caso {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #2d6a4f 0%, #1b4d3a 100%);
-            border-radius: 12px;
-            margin: 1rem 0 1.5rem 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
-            gap: 0.5rem;
-        }
-
-        .descripcion {
-            background: #f5f2eb;
-            padding: 1rem 1.2rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: #6b6558;
-        }
-
-        .pregunta {
-            margin-bottom: 2rem;
-            padding: 1rem;
-            background: #fafaf8;
-            border-radius: 12px;
-            border: 1px solid #ede9df;
-        }
-
-        .pregunta h3 {
-            font-family: 'Syne', sans-serif;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            color: #0d0f14;
-        }
-
-        .opciones {
-            display: flex;
-            flex-direction: column;
-            gap: 0.7rem;
-            margin-bottom: 1rem;
-        }
-
-        .opcion {
-            background: #f5f2eb;
-            border: 1px solid #ede9df;
-            padding: 0.8rem 1rem;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            color: #6b6558;
-        }
-
-        .feedback {
-            margin-top: 0.5rem;
-            padding: 0.7rem 1rem;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            background: #f0f0f0;
-            color: #8b7f6e;
-            font-style: italic;
-        }
-
-        .btn-volver {
-            background: #2d6a4f;
-            color: white;
-            padding: 0.8rem 2rem;
-            border: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            border-radius: 6px;
-            transition: transform 0.2s;
-            margin-top: 1rem;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-volver:hover {
-            transform: translateY(-2px);
-            background: #1f4f3a;
-        }
-
-        .progreso {
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid #ede9df;
-            text-align: center;
-            font-size: 0.8rem;
-            color: #6b6558;
-        }
-
-        .revision {
-            background: #f0f0f0;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-top: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .revision h3 {
-            font-family: 'Syne', sans-serif;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .revision-item {
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 8px;
-            background: white;
-        }
-
-        .placeholder-text {
-            color: #999;
-            font-family: monospace;
-            background: #f5f2eb;
-            padding: 0.5rem;
-            border-radius: 4px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/caso-styles.css">
 </head>
 
-<body>
-    <div class="container">
-        <h1>🧬 Consumo de SPA</h1>
-        <div class="badge">Caso Intermedio</div>
-
-        <div class="imagen-caso">
-            🖼️ IMAGEN DEL CASO: Consumo de Sustancias Psicoactivas
-        </div>
-
-        <div class="descripcion">
-            <strong>Contexto:</strong> #########################
-            #########################
-            #########################
-            #########################
-        </div>
-
-        <div class="pregunta">
-            <h3>1. ####################################</h3>
-            <div class="opciones">
-                <div class="opcion">A. ####################</div>
-                <div class="opcion">B. ####################</div>
-                <div class="opcion">C. ####################</div>
-                <div class="opcion">D. ####################</div>
-            </div>
-            <div class="feedback">💡 ####################################</div>
-        </div>
-
-        <div class="pregunta">
-            <h3>2. ####################################</h3>
-            <div class="opciones">
-                <div class="opcion">A. ####################</div>
-                <div class="opcion">B. ####################</div>
-                <div class="opcion">C. ####################</div>
-                <div class="opcion">D. ####################</div>
-            </div>
-            <div class="feedback">💡 ####################################</div>
-        </div>
-
-        <div class="pregunta">
-            <h3>3. ####################################</h3>
-            <div class="opciones">
-                <div class="opcion">A. ####################</div>
-                <div class="opcion">B. ####################</div>
-                <div class="opcion">C. ####################</div>
-                <div class="opcion">D. ####################</div>
-            </div>
-            <div class="feedback">💡 ####################################</div>
-        </div>
-
-        <div class="pregunta">
-            <h3>4. ####################################</h3>
-            <div class="opciones">
-                <div class="opcion">A. ####################</div>
-                <div class="opcion">B. ####################</div>
-                <div class="opcion">C. ####################</div>
-                <div class="opcion">D. ####################</div>
-            </div>
-            <div class="feedback">💡 ####################################</div>
-        </div>
-
-        <div class="progreso">## ## ## ## ## ## ## ## ## ## ## ## ##</div>
-
-        <div class="revision">
-            <h3>📋 Revisión final del caso</h3>
-            <div class="revision-item">
-                <div class="placeholder-text">## ## ## ## ## ## ## ## ## ## ## ##</div>
-            </div>
-            <div class="revision-item">
-                <div class="placeholder-text">## ## ## ## ## ## ## ## ## ## ## ##</div>
-            </div>
-            <div class="revision-item">
-                <div class="placeholder-text">## ## ## ## ## ## ## ## ## ## ## ##</div>
-            </div>
-            <div class="revision-item">
-                <div class="placeholder-text">## ## ## ## ## ## ## ## ## ## ## ##</div>
+<body class="caso-body">
+    <div class="caso-container">
+        <div class="caso-header">
+            <h1 class="caso-titulo">
+                <span>🧬</span> Consumo de SPA
+            </h1>
+            <div style="display: flex; gap: 0.8rem;">
+                <div class="caso-badge intermedio">Caso Intermedio · 4 preguntas</div>
+                <button class="btn-reiniciar" id="btnReiniciar" style="display: none;">🔄 Reiniciar</button>
             </div>
         </div>
+
+        <div class="caso-descripcion">
+            <strong>📋 CONTEXTO DEL CASO</strong>
+            <p>Juan, 19 años, es derivado por su madre al centro de atención psicosocial. Presenta bajo rendimiento académico, ha abandonado parcialmente sus estudios y su círculo social ha cambiado drásticamente en los últimos 8 meses. La madre reporta haber encontrado pipas y residuos de marihuana en su habitación. Juan se muestra inicialmente a la defensiva, pero acepta participar en una entrevista. No reconoce tener un problema y minimiza su consumo ("solo los fines de semana"). Refiere sentirse "tranquilo" cuando consume y que sus amigos también lo hacen.</p>
+        </div>
+
+        <div id="preguntasContainer"></div>
+
+        <div class="caso-progreso" id="progreso">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progreso-texto" id="progresoTexto">Pregunta 1 de 4</div>
+        </div>
+
+        <div id="finalizado" style="display:none;" class="caso-finalizado">
+            🎉 ¡Has completado el caso! Revisa abajo tus resultados.
+        </div>
+
+        <div id="revisionContainer" class="oculto"></div>
 
         <a href="../index.html" class="btn-volver">← Volver a la página principal</a>
     </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/caso-main.js"></script>
+    <script>
+        const preguntas = [
+            {
+                texto: "¿Cuál es la primera acción que debes realizar en la entrevista con Juan?",
+                icono: "🎯",
+                opciones: [
+                    "Confrontarlo con la evidencia encontrada por su madre",
+                    "Establecer rapport y generar un clima de confianza sin juzgar",
+                    "Solicitar que traiga a sus amigos para una entrevista grupal",
+                    "Derivarlo inmediatamente a un centro de rehabilitación"
+                ],
+                correcta: 1,
+                explicacion: "La creación de un vínculo terapéutico basado en la confianza y el respeto es fundamental en el abordaje de consumos problemáticos. La confrontación inicial suele generar resistencia y abandono del proceso."
+            },
+            {
+                texto: "Juan niega tener un problema y dice que 'todo el mundo lo hace'. ¿Cómo respondes?",
+                icono: "💬",
+                opciones: [
+                    "Le dices que está mintiendo y que su madre ya te contó todo",
+                    "Le recitas los riesgos legales y de salud del consumo",
+                    "Validas su percepción, pero exploras los cambios negativos en su vida desde que consume",
+                    "Terminas la entrevista por falta de compromiso"
+                ],
+                correcta: 2,
+                explicacion: "La entrevista motivacional utiliza la ambivalencia como punto de partida. Explorar las consecuencias negativas que el mismo usuario identifica (sin imponerlas) facilita la toma de conciencia."
+            },
+            {
+                texto: "¿Qué instrumento profesional sería más adecuado para la evaluación inicial?",
+                icono: "📋",
+                opciones: [
+                    "Test de personalidad MMPI",
+                    "Entrevista motivacional y cuestionario ASSIST (detección de consumo)",
+                    "Evaluación psiquiátrica completa",
+                    "Solo observación conductual"
+                ],
+                correcta: 1,
+                explicacion: "El ASSIST (Alcohol, Smoking and Substance Involvement Screening Test) es un instrumento validado por la OMS para detectar consumo problemático. La entrevista motivacional complementa la evaluación."
+            },
+            {
+                texto: "Además de Juan, ¿con quién más debes entrevistarte prioritariamente?",
+                icono: "👨‍👩‍👦",
+                opciones: [
+                    "Solo con Juan, el problema es individual",
+                    "Con su madre, para evaluar dinámica familiar y redes de apoyo",
+                    "Con sus amigos, para que confirmen el consumo",
+                    "Con sus profesores universitarios"
+                ],
+                correcta: 1,
+                explicacion: "El enfoque sistémico del trabajo social requiere evaluar el contexto familiar. La madre puede aportar información valiosa y es parte de la red de apoyo fundamental para el tratamiento."
+            }
+        ];
+
+        initCaso(preguntas);
+    </script>
 </body>
 
 </html>

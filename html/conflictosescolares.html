@@ -9,242 +9,100 @@
         href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
-    <style>
-        body {
-            padding: 2rem;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 16px;
-            padding: 2.5rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        h1 {
-            font-family: 'Syne', sans-serif;
-            font-size: 1.8rem;
-            color: #c84b2f;
-            margin-bottom: 0.5rem;
-        }
-
-        .badge {
-            display: inline-block;
-            background: #6b6558;
-            color: white;
-            font-size: 0.7rem;
-            padding: 0.2rem 0.8rem;
-            border-radius: 20px;
-            margin-bottom: 1rem;
-        }
-
-        .imagen-caso {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #4a6fa5 0%, #2c4a7a 100%);
-            border-radius: 12px;
-            margin: 1rem 0 1.5rem 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
-            gap: 0.5rem;
-        }
-
-        .descripcion {
-            background: #f5f2eb;
-            padding: 1rem 1.2rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: #6b6558;
-        }
-
-        .pregunta {
-            margin-bottom: 2rem;
-            padding: 1rem;
-            background: #fafaf8;
-            border-radius: 12px;
-            border: 1px solid #ede9df;
-        }
-
-        .pregunta h3 {
-            font-family: 'Syne', sans-serif;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            color: #0d0f14;
-        }
-
-        .opciones {
-            display: flex;
-            flex-direction: column;
-            gap: 0.7rem;
-            margin-bottom: 1rem;
-        }
-
-        .opcion {
-            background: #f5f2eb;
-            border: 1px solid #ede9df;
-            padding: 0.8rem 1rem;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            color: #6b6558;
-        }
-
-        .feedback {
-            margin-top: 0.5rem;
-            padding: 0.7rem 1rem;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            background: #f0f0f0;
-            color: #8b7f6e;
-            font-style: italic;
-        }
-
-        .btn-volver {
-            background: #2d6a4f;
-            color: white;
-            padding: 0.8rem 2rem;
-            border: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            border-radius: 6px;
-            transition: transform 0.2s;
-            margin-top: 1rem;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-volver:hover {
-            transform: translateY(-2px);
-            background: #1f4f3a;
-        }
-
-        .progreso {
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid #ede9df;
-            text-align: center;
-            font-size: 0.8rem;
-            color: #6b6558;
-        }
-
-        .revision {
-            background: #f0f0f0;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-top: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .revision h3 {
-            font-family: 'Syne', sans-serif;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .revision-item {
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 8px;
-            background: white;
-        }
-
-        .placeholder-text {
-            color: #999;
-            font-family: monospace;
-            background: #f5f2eb;
-            padding: 0.5rem;
-            border-radius: 4px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/caso-styles.css">
 </head>
 
-<body>
-    <div class="container">
-        <h1>🎓 Conflictos Escolares</h1>
-        <div class="badge">Caso Básico</div>
-
-        <div class="imagen-caso">
-            🖼️ IMAGEN DEL CASO: Conflictos Escolares
-        </div>
-
-        <div class="descripcion">
-            <strong>Contexto:</strong> #########################
-            #########################
-            #########################
-            #########################
-        </div>
-
-        <div class="pregunta">
-            <h3>1. ####################################</h3>
-            <div class="opciones">
-                <div class="opcion">A. ####################</div>
-                <div class="opcion">B. ####################</div>
-                <div class="opcion">C. ####################</div>
-                <div class="opcion">D. ####################</div>
-            </div>
-            <div class="feedback">💡 ####################################</div>
-        </div>
-
-        <div class="pregunta">
-            <h3>2. ####################################</h3>
-            <div class="opciones">
-                <div class="opcion">A. ####################</div>
-                <div class="opcion">B. ####################</div>
-                <div class="opcion">C. ####################</div>
-                <div class="opcion">D. ####################</div>
-            </div>
-            <div class="feedback">💡 ####################################</div>
-        </div>
-
-        <div class="pregunta">
-            <h3>3. ####################################</h3>
-            <div class="opciones">
-                <div class="opcion">A. ####################</div>
-                <div class="opcion">B. ####################</div>
-                <div class="opcion">C. ####################</div>
-                <div class="opcion">D. ####################</div>
-            </div>
-            <div class="feedback">💡 ####################################</div>
-        </div>
-
-        <div class="pregunta">
-            <h3>4. ####################################</h3>
-            <div class="opciones">
-                <div class="opcion">A. ####################</div>
-                <div class="opcion">B. ####################</div>
-                <div class="opcion">C. ####################</div>
-                <div class="opcion">D. ####################</div>
-            </div>
-            <div class="feedback">💡 ####################################</div>
-        </div>
-
-        <div class="progreso">## ## ## ## ## ## ## ## ## ## ## ## ##</div>
-
-        <div class="revision">
-            <h3>📋 Revisión final del caso</h3>
-            <div class="revision-item">
-                <div class="placeholder-text">## ## ## ## ## ## ## ## ## ## ## ##</div>
-            </div>
-            <div class="revision-item">
-                <div class="placeholder-text">## ## ## ## ## ## ## ## ## ## ## ##</div>
-            </div>
-            <div class="revision-item">
-                <div class="placeholder-text">## ## ## ## ## ## ## ## ## ## ## ##</div>
-            </div>
-            <div class="revision-item">
-                <div class="placeholder-text">## ## ## ## ## ## ## ## ## ## ## ##</div>
+<body class="caso-body">
+    <div class="caso-container">
+        <div class="caso-header">
+            <h1 class="caso-titulo">
+                <span>🎓</span> Conflictos Escolares
+            </h1>
+            <div style="display: flex; gap: 0.8rem;">
+                <div class="caso-badge basico">Caso Básico · 4 preguntas</div>
+                <button class="btn-reiniciar" id="btnReiniciar" style="display: none;">🔄 Reiniciar</button>
             </div>
         </div>
+
+        <div class="caso-descripcion">
+            <strong>📋 CONTEXTO DEL CASO</strong>
+            <p>Institución Educativa "Nueva Esperanza". Se ha reportado un aumento de conflictos entre estudiantes de séptimo básico. El caso más reciente involucra a Dylan (13 años) y Sebastián (12 años), quienes tuvieron una pelea física durante el recreo. La dirección del colegio solicita intervención del trabajador social. Dylan proviene de un hogar monoparental, ha tenido problemas de conducta previos. Sebastián es un estudiante nuevo, más retraído, y sus padres están preocupados por su adaptación. Los profesores reportan que hay un grupo de estudiantes que intimida a otros.</p>
+        </div>
+
+        <div id="preguntasContainer"></div>
+
+        <div class="caso-progreso" id="progreso">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progreso-texto" id="progresoTexto">Pregunta 1 de 4</div>
+        </div>
+
+        <div id="finalizado" style="display:none;" class="caso-finalizado">
+            🎉 ¡Has completado el caso! Revisa abajo tus resultados.
+        </div>
+
+        <div id="revisionContainer" class="oculto"></div>
 
         <a href="../index.html" class="btn-volver">← Volver a la página principal</a>
     </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/caso-main.js"></script>
+    <script>
+        const preguntas = [
+            {
+                texto: "¿Cuál es el primer paso en tu intervención como trabajador social escolar?",
+                icono: "📋",
+                opciones: [
+                    "Sancionar a Dylan y Sebastián con suspensión",
+                    "Reunirte individualmente con Dylan y Sebastián para escuchar sus versiones",
+                    "Reunir a todo el curso para hablar del respeto",
+                    "Citar a los padres de ambos estudiantes para una reunión conjunta"
+                ],
+                correcta: 1,
+                explicacion: "La escucha individual permite comprender las motivaciones y perspectivas de cada involucrado sin presiones grupales. Es fundamental antes de cualquier intervención grupal o con familias."
+            },
+            {
+                texto: "Sebastián te cuenta que ha sido víctima de burlas constantes por parte de Dylan y su grupo. ¿Cómo procedes?",
+                icono: "💬",
+                opciones: [
+                    "Le dices que debe defenderse y no dejarse intimidar",
+                    "Registras el relato y activas el protocolo de acoso escolar",
+                    "Le restas importancia diciendo que son 'cosas de niños'",
+                    "Lo citas junto con Dylan para que se enfrenten"
+                ],
+                correcta: 1,
+                explicacion: "El acoso escolar (bullying) requiere la activación de protocolos institucionales. Nunca se debe minimizar ni responsabilizar a la víctima. La denuncia y registro son los primeros pasos."
+            },
+            {
+                texto: "¿Qué enfoque de intervención es más adecuado para abordar la dinámica grupal?",
+                icono: "👥",
+                opciones: [
+                    "Sancionar solo a los agresores identificados",
+                    "Implementar un programa de mediación entre pares y habilidades socioemocionales",
+                    "Cambiar de colegio a Sebastián",
+                    "Ignorar la dinámica grupal y enfocarse solo en los casos individuales"
+                ],
+                correcta: 1,
+                explicacion: "El abordaje sistémico del acoso escolar incluye trabajar con todo el grupo curso (espectadores incluidos), desarrollar habilidades socioemocionales y fortalecer la convivencia escolar."
+            },
+            {
+                texto: "¿Con qué otro profesional debes coordinar acciones prioritariamente?",
+                icono: "🤝",
+                opciones: [
+                    "Solo con dirección del colegio",
+                    "Con el equipo de convivencia escolar, psicólogo y profesores",
+                    "Con la policía para denuncia penal",
+                    "Con el municipio para cambio de escuela"
+                ],
+                correcta: 1,
+                explicacion: "El trabajo social escolar requiere coordinación interdisciplinaria: orientador, psicólogo, profesores y equipo directivo conforman el equipo de convivencia para abordar integralmente los conflictos."
+            }
+        ];
+
+        initCaso(preguntas);
+    </script>
 </body>
 
 </html>

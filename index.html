@@ -306,8 +306,8 @@
                     <li>✅ Progreso guardado</li>
                     <li>✅ Certificado digital</li>
                 </ul>
-                <button class="btn-plan"
-                    onclick="alert('Gracias por tu interés. Próximamente disponible.')">SUSCRIBIRSE</button>
+                <button class="btn-plan" onclick="abrirModalPago('individual')">SUSCRIBIRSE</button>
+
             </div>
 
             <div class="plan featured" data-reveal>
@@ -328,9 +328,7 @@
                     <li>✅ Reportes de desempeño</li>
                     <li>✅ Soporte técnico dedicado</li>
                 </ul>
-                <button class="btn-plan"
-                    onclick="alert('Solicita información para tu universidad. Escríbenos a ventas@simuintervencion.com')">SOLICITAR
-                    LICENCIAS</button>
+                <button class="btn-plan" onclick="abrirModalPago('universidad')">SOLICITAR LICENCIAS</button>
             </div>
 
             <div class="plan" data-reveal>
@@ -349,8 +347,7 @@
                     <li>✅ Retroalimentación experta</li>
                     <li>✅ Certificado con firma</li>
                 </ul>
-                <button class="btn-plan" onclick="alert('Agenda tu taller grupal. Cupos limitados.')">AGENDAR
-                    TALLER</button>
+                <button class="btn-plan" onclick="abrirModalPago('premium')">AGENDAR TALLER</button>
             </div>
         </div>
     </section>
@@ -438,7 +435,113 @@
         <p style="color:rgba(255,255,255,0.2)">© 2026 — Todos los derechos reservados</p>
     </footer>
 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       <!-- Modal de pago -->
+    <div id="modalPago" class="modal-pago">
+        <div class="modal-contenido">
+            <div class="modal-header">
+                <h2>
+                    <span id="modalTitulo">💰</span> Confirmar Pago
+                </h2>
+                <span class="modal-cerrar" onclick="cerrarModalPago()">&times;</span>
+            </div>
+
+                        <div class="bancos-info">
+                <h3>💳 Selecciona tu método de pago</h3>
+                <div id="cuentaInfo">
+                    <div class="cuenta-vacia">
+                        <p>🔘 Selecciona un método de pago para ver los datos de la cuenta</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="precio-info">
+                <span>💰 <strong>Plan seleccionado:</strong> <span id="planNombre">-</span></span>
+                <div class="precio" id="precioMostrar">$0 COP</div>
+            </div>
+
+            <form class="form-pago" id="formPago" onsubmit="event.preventDefault(); procesarPago();">
+                <div class="form-group">
+                    <label>👤 Nombre completo *</label>
+                    <input type="text" id="nombreCompleto" placeholder="Ej: María González Pérez" required>
+                </div>
+                <div class="form-group">
+                    <label>📌 Cédula / NIT *</label>
+                    <input type="text" id="cedulaCliente" placeholder="Ej: 1.234.567-8 o 901.234.567-8" required>
+                </div>
+                <div class="form-group">
+                    <label>✉️ Correo electrónico *</label>
+                    <input type="email" id="emailCliente" placeholder="ejemplo@correo.com" required>
+                </div>
+                <div class="form-group">
+                    <label>📱 Teléfono de contacto *</label>
+                    <input type="tel" id="telefonoCliente" placeholder="Ej: 312 345 6789" required>
+                </div>
+                <div class="form-group">
+                    <label>💳 Método de pago</label>
+                    <select id="metodoPago" onchange="actualizarDatosCuenta()">
+                        <option value="">-- Selecciona un método --</option>
+                        <option value="bancolombia">🏦 Bancolombia (Transferencia / PSE)</option>
+                        <option value="nequi">💚 Nequi (Billetera digital)</option>
+                        <option value="daviplata">💜 Daviplata (Billetera digital)</option>
+                    </select>
+                </div>
+                <div class="botones-modal">
+                    <button type="submit" class="btn-pagar">✅ Confirmar y pagar</button>
+                    <button type="button" class="btn-cancelar" onclick="cerrarModalPago()">❌ Cancelar</button>
+                </div>
+            </form>
+            <div class="nota-pago">
+                📌 Al hacer clic en "Confirmar", recibirás un correo con los datos para completar tu pago.
+                <br>Los cupos son limitados y se asignan por orden de pago.
+                <br><strong>🇨🇴 Aceptamos pagos desde toda Colombia</strong>
+            </div>
+        </div>
+    </div>
+
     <script src="./js/main.js"></script>
+    <script src="./js/modal-pago.js"></script>
 </body>
 
 </html>
