@@ -1,4 +1,3 @@
-// Modal de pago
 let planSeleccionado = null;
 
 const planesInfo = {
@@ -22,14 +21,13 @@ const planesInfo = {
     }
 };
 
-// Datos de cuentas bancarias para Colombia
 const cuentasColombia = {
     bancolombia: {
         nombre: "Bancolombia",
         tipo: "Cuenta de Ahorros",
         numero: "123-456789-01",
-        titular: "SimuIntervención 360° SAS",
-        cedulaNit: "901.234.567-8",
+        titular: "SimuIntervención 360° ",
+        cedula: "1105864581",
         email: "pagos@simuintervencion.com",
         instrucciones: "Transferencia desde cualquier banco aliado a Bancolombia o usa PSE"
     },
@@ -38,7 +36,7 @@ const cuentasColombia = {
         tipo: "Billetera Digital",
         numero: "3123456789",
         titular: "SimuIntervención 360°",
-        cedulaNit: "901.234.567-8",
+        cedula: "1105864581",
         email: "pagos@simuintervencion.com",
         instrucciones: "Abre la app de Nequi → Transferir → Ingresa el número 3123456789"
     },
@@ -47,7 +45,7 @@ const cuentasColombia = {
         tipo: "Billetera Digital",
         numero: "3219876543",
         titular: "SimuIntervención 360°",
-        cedulaNit: "901.234.567-8",
+        cedula: "1105864581",
         email: "pagos@simuintervencion.com",
         instrucciones: "Abre la app de Daviplata → Enviar dinero → Ingresa el número 3219876543"
     }
@@ -68,14 +66,12 @@ function abrirModalPago(plan) {
     planNombreSpan.textContent = info.nombre;
     precioSpan.textContent = info.precioFormateado;
 
-    // Limpiar formulario
     document.getElementById('nombreCompleto').value = '';
     document.getElementById('cedulaCliente').value = '';
     document.getElementById('emailCliente').value = '';
     document.getElementById('telefonoCliente').value = '';
     document.getElementById('metodoPago').value = '';
     
-    // Limpiar y ocultar datos de cuenta (vacío al inicio)
     limpiarDatosCuenta();
 
     modal.classList.add('visible');
@@ -94,7 +90,6 @@ function actualizarDatosCuenta() {
     const metodo = document.getElementById('metodoPago').value;
     const cuentaInfo = document.getElementById('cuentaInfo');
     
-    // Si no hay método seleccionado, mostrar vacío
     if (!metodo) {
         limpiarDatosCuenta();
         return;
@@ -213,7 +208,6 @@ function procesarPago() {
     alert(mensaje);
     cerrarModalPago();
 
-    // Guardar en localStorage
     const pagosRegistrados = JSON.parse(localStorage.getItem('pagosSimu') || '[]');
     pagosRegistrados.push({
         plan: info.nombre,
@@ -230,7 +224,6 @@ function procesarPago() {
     localStorage.setItem('pagosSimu', JSON.stringify(pagosRegistrados));
 }
 
-// Cerrar modal al hacer clic fuera del contenido
 document.addEventListener('click', function(event) {
     const modal = document.getElementById('modalPago');
     const contenido = modal?.querySelector('.modal-contenido');
@@ -239,7 +232,6 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// Cerrar con tecla ESC
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         cerrarModalPago();

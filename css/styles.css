@@ -1357,58 +1357,6 @@ footer p {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Modal de pago */
 .modal-pago {
     display: none;
     position: fixed;
@@ -1444,6 +1392,7 @@ footer p {
         opacity: 0;
         transform: translateY(-30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1619,19 +1568,6 @@ footer p {
     padding-top: 1rem;
     border-top: 1px solid #ede9df;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .cuenta-vacia {
     background: #fafaf8;
